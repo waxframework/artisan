@@ -17,6 +17,7 @@
     "require": {
         "symfony/console": "5.4.17"
     },
+    "minimum-stability": "dev",
     "scripts": {
         "format": "vendor/bin/phpcbf --standard=phpcs.xml",
         "phpcs": "vendor/bin/phpcs --standard=phpcs.xml --report-full --report-checkstyle=./phpcs-report.xml"
