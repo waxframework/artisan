@@ -51,6 +51,7 @@ class Setup extends Command
         ];
 
         $file_name =  str_replace( ' ', '-', strtolower( $plugin_name ) );
+        $hook_name =  str_replace( ' ', '_', strtolower( $plugin_name ) );
 
         $replace = [
             $plugin_namespace,
@@ -58,7 +59,7 @@ class Setup extends Command
             $plugin_api_namespace,
             str_replace( ' ', '', ucwords( $plugin_name ) ),
             $file_name,
-            $file_name
+            $hook_name
         ];
 
         $this->update_file_content( $search, $replace );
