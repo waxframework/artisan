@@ -3,8 +3,10 @@
 namespace WaxFramework\Artisan\Commands\Make;
 
 class Controller extends Make {
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultName = 'make:controller';
-
+    
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultDescription = 'Create a new controller class';
 
     public function namespaces():array {

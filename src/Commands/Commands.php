@@ -13,7 +13,7 @@ use WaxFramework\Artisan\Contracts\Command;
 class Commands
 {
     /**
-     * Undocumented function
+     * Register all available commands
      *
      * @return array<Command>;
      */

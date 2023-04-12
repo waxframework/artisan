@@ -2,7 +2,6 @@
 
 namespace WaxFramework\Artisan\Commands\Make;
 
-use PHP_CodeSniffer\Tokenizers\PHP;
 use WaxFramework\Artisan\Contracts\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -55,8 +54,8 @@ abstract class Make extends Command {
             mkdir( $directory_path, 0777, true );
         } elseif ( file_exists( $file_path ) ) {
             echo PHP_EOL;
-            $formatterHelper = new FormatterHelper();
-            $output->writeln( $formatterHelper->formatBlock( "{$class } {$this->get_called_class_name()} Already Exists!", 'error', true ) );
+            $formatter_helper = new FormatterHelper();
+            $output->writeln( $formatter_helper->formatBlock( "{$class } {$this->get_called_class_name()} Already Exists!", 'error', true ) );
             return Command::FAILURE;
         }
 

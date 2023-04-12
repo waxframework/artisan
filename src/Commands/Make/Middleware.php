@@ -3,8 +3,10 @@
 namespace WaxFramework\Artisan\Commands\Make;
 
 class Middleware extends Make {
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultName = 'make:middleware';
 
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultDescription = 'Create a new middleware class';
 
     public function namespaces():array {

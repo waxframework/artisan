@@ -3,8 +3,10 @@
 namespace WaxFramework\Artisan\Commands\Make;
 
 class Model extends Make {
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultName = 'make:model';
 
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultDescription = 'Create a new model class';
 
     public function namespaces():array {

@@ -9,8 +9,10 @@ use Symfony\Component\Console\Question\Question;
 
 class Setup extends Command
 {
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultName = 'app:setup';
 
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultDescription = 'Setup wordpress plugin basic information';
 
     protected function execute( InputInterface $input, OutputInterface $output ): int {

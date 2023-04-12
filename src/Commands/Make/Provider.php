@@ -3,8 +3,10 @@
 namespace WaxFramework\Artisan\Commands\Make;
 
 class Provider extends Make {
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultName = 'make:provider';
 
+    //phpcs:ignore WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase
     protected static $defaultDescription = 'Create a new service provider class';
 
     public function namespaces():array {
