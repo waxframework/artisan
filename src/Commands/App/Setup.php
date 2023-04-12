@@ -133,7 +133,7 @@ class Setup extends Command
     }
 
     protected function directories() {
-        return ['app', 'config', 'database', 'routes'];
+        return ['app', 'config', 'routes'];
     }
 
     protected function plugin_name_validation( $plugin_name, InputInterface $input, OutputInterface $output ) {
