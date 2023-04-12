@@ -74,7 +74,7 @@ class Setup extends Command
 
         unlink( $old_root_file );
 
-        $this->update_artisan_file();
+        $this->update_artisan_file( $plugin_namespace );
       
         $output->writeln( "<info>Information Updated Successfully!</info>" );
         echo PHP_EOL;
@@ -87,10 +87,10 @@ class Setup extends Command
         return Command::SUCCESS;
     }
 
-    protected function update_artisan_file() {
+    protected function update_artisan_file( string $namespace ) {
         $artisan_path = $this->artisan->root_dir . DIRECTORY_SEPARATOR . 'artisan';
-        $subject = file_get_contents( $artisan_path );
-        file_put_contents( $artisan_path, str_replace( 'vendor-src', 'vendor/vendor-src', $subject ) );
+        $subject      = file_get_contents( $artisan_path );
+        file_put_contents( $artisan_path, str_replace( ['vendor-src', 'WaxFramework'], ['vendor/vendor-src', "{$namespace}\\WaxFramework"], $subject ) );
     }
 
     protected function update_file_content( array $search, array $replace ) {
