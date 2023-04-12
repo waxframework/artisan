@@ -74,14 +74,23 @@ class Setup extends Command
 
         unlink( $old_root_file );
 
+        $this->update_artisan_file();
+      
         $output->writeln( "<info>Information Updated Successfully!</info>" );
         echo PHP_EOL;
         $output->writeln( "<question>Started adding namespace prefix to the Composer libraries</question>" );
+        exec( 'composer humbug/php-scoper' );
         exec( 'composer add-prefix' );
 
         $output->writeln( "<info>{$plugin_name} Plugin Setup Successfully!</info>" );
 
         return Command::SUCCESS;
+    }
+
+    protected function update_artisan_file() {
+        $artisan_path = $this->artisan->root_dir . DIRECTORY_SEPARATOR . 'artisan';
+        $subject = file_get_contents( $artisan_path );
+        file_put_contents( $artisan_path, str_replace( 'vendor-src', 'vendor/vendor-src', $subject ) );
     }
 
     protected function update_file_content( array $search, array $replace ) {
