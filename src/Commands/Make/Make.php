@@ -60,11 +60,10 @@ abstract class Make extends Command {
             return Command::FAILURE;
         }
 
-        $uses_classes     = static::uses_classes();
-        $namespace_prefix = explode( '\\', __NAMESPACE__ )[0];
-        $uses_classes     = array_map(
-            function( $class )use( $namespace_prefix ) {
-                return "use {$namespace_prefix}\\{$class};";
+        $uses_classes = static::uses_classes();
+        $uses_classes = array_map(
+            function( $class ) {
+                return "use {$class};";
             }, $uses_classes
         );
 
