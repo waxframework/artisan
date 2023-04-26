@@ -27,6 +27,8 @@ class Repository extends Make {
     public function file_content() {
         return '<?php
 
+namespace NamespaceName;
+
 class ClassName {
     public function get() {
         //
