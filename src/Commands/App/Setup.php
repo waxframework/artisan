@@ -59,7 +59,7 @@ class Setup extends Command
             $plugin_namespace,
             $plugin_name,
             $plugin_api_namespace,
-            str_replace( ' ', '', ucwords( $plugin_name ) ),
+            str_replace( [' ', '-'], ['', ''], ucwords( $plugin_name ) ),
             $file_name,
             $hook_name
         ];
