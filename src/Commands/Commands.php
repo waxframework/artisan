@@ -4,6 +4,7 @@ namespace WaxFramework\Artisan\Commands;
 
 use WaxFramework\Artisan\Commands\App\Setup;
 use WaxFramework\Artisan\Commands\Make\Controller;
+use WaxFramework\Artisan\Commands\Make\DTO;
 use WaxFramework\Artisan\Commands\Make\Middleware;
 use WaxFramework\Artisan\Commands\Make\Model;
 use WaxFramework\Artisan\Commands\Make\Provider;
@@ -21,6 +22,7 @@ class Commands
         return [
             Setup::class,
             Controller::class,
+            DTO::class,
             Middleware::class,
             Model::class,
             Provider::class,
