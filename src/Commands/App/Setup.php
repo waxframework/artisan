@@ -49,11 +49,13 @@ class Setup extends Command
             'MyPluginApiNamespace',
             'MyPluginClass',
             'MyPluginTextDomain',
-            'my_plugin_hook'
+            'plugin_file_name',
+            'my_plugin_hook',
+            'my_plugin_function'
         ];
 
         $file_name =  str_replace( ' ', '-', strtolower( $plugin_name ) );
-        $hook_name =  str_replace( ' ', '_', strtolower( $plugin_name ) );
+        $hook_name =  str_replace( [' ', '-'], ['_', '_'], strtolower( $plugin_name ) );
 
         $replace = [
             $plugin_namespace,
@@ -61,6 +63,8 @@ class Setup extends Command
             $plugin_api_namespace,
             str_replace( [' ', '-'], ['', ''], ucwords( $plugin_name ) ),
             $file_name,
+            $file_name,
+            $hook_name,
             $hook_name
         ];
 
@@ -131,7 +135,8 @@ class Setup extends Command
         return [
             'composer.json',
             'package.json',
-            'scoper.inc.php'
+            'scoper.inc.php',
+            'utils.js'
         ];
     }
 
